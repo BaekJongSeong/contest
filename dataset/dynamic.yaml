@@ -1,0 +1,7 @@
+names:
+- car
+- two-wheeled vehicle
+- pedestrian
+nc: 3
+train: /content/drive/MyDrive/Colab Notebooks/yolov5/yolov5/dataset/train.txt
+val: /content/drive/MyDrive/Colab Notebooks/yolov5/yolov5/dataset/val.txt

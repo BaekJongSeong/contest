@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\darknet"
+		},
+		{
+			"path": "..\\tensorflow-yolov4-tflite"
+		},
+		{
+			"path": "..\\main"
+		},
+		{
+			"path": "..\\contest"
+		}
+	],
+	"settings": {}
+}
