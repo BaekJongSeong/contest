@@ -54,7 +54,7 @@ Mask: 총 9개의 anchor이 정의되어 있는데, 그 중 mask에 적혀있는
 
 
 
-  + Dataset.py
+  ### + Dataset.py
     + 파일이름에 띄어쓰기가 있는 경우 처리.
     + Coco annotation으로 되어있으면 이미지 파일 이름 + left top, right bottom 좌표 + class_id가 들어오는데 이때 띄어쓰기를 기준으로 들어옴.
     + 그래서 dataset 오류 생길 수 있으므로 image 파일 이름 띄어쓰기를 처리
