@@ -9,6 +9,20 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 
 해커톤을 3부분(아이디어 파트와 기술파트, 사업화파트)로 나누어보면, 이 부분은 기술파트에 해당하는 repository이며 yolov4에 대해서 설명하고 있습니다.
 
+------
+# 프로젝트 전체적 개요입니다
+제공받은 데이터(png 10329장 + json 파일 10329개) 이용
+---
+|데이터 전처리|학습데이터셋 생성|학습|모델 생성 및 예측|
+|Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
+최종 9964개의 data로 추림.
+Labels 중에서 목적차량을 차량으로 통합(최종 분류 class 개수 3개)
+mAP 정확도 향상을 위해 epoch를 class 개수 *20000으로 총 60000번 지정. (최종 학습완료된 epoch는 12000번)
+데이터가 방대하기 때문에 Image argumentation을 적용하지 않음. (똑같은 사진을 회전과 좌우 반전을 부여하여 data 개수 늘림으로써 모델 성능이 정확)
+|a|a|a|
+
+---
+
 ```bash
 ## yolov4
 python save_model.py --weights ./data/yolov4.weights --output ./checkpoints/yolov4-416 --input_size 416 --model yolov4 
