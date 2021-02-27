@@ -29,16 +29,23 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 	  + batch, subdivision크기와 학습 이미지 크기 조정, hyperparameter 조정, learning rate와 epoch, [convolutional neural network] 및 [yolo network]의 filter와 activation 조정, max pooling size 조정
 
 Subdivision = 64 (1 epoch 당 batch size)
+
 Width & height = 416
+
 momentum=0.949 (optimazation으로 과거 이동 방식 기억, 가중치 계속 부여)
+
 channels=3	(1 epoch 당 3개의 channels)
+
 learning_rate=0.001(학습 속도가 너무 느려도, 빨라도 안됨)
-max_batches = 60000
+
 CNN activation=mish (relu activation보다 부드럽게 올라가는 gradient)
-SPPnet
+
 마지막 부분의 CNN activation = linear
+
 YOLO layer은 이미지의 feature들을 뽑고 난 후에 실질적인 prediction을 하는 layer. 
+
 Mask: 총 9개의 anchor이 정의되어 있는데, 그 중 mask에 적혀있는 tag에 해당하는 anchor들만 사용.(ex) anchors = 12, 16, 19, 36, 40, 28, 36, 75, 76, 55, 72, 146, 142, 110, 192, 243, 459, 401)
+
 
   + Dataset.py
     + 파일이름에 띄어쓰기가 있는 경우 처리.
