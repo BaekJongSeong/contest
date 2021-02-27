@@ -13,7 +13,10 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 # 프로젝트 전체적 개요입니다
 제공받은 데이터(png 10329장 + json 파일 10329개) 이용
 
-데이터 전처리 ==> Config.py 파일 구성 및 hyperparameter수정 ==> 모델 학습 train.py ==> detect.py를 통한 예측
+### 1. 데이터 전처리
+### 2. Config.py 파일 구성 및 hyperparameter수정
+### 3. 모델 학습 train.py
+### 4. detect.py를 통한 예측
 ------
 + 데이터 전처리
   + Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
