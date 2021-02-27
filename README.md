@@ -15,12 +15,12 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 
 |데이터 전처리|학습데이터셋 생성|학습|모델 생성 및 예측|
 |---|---|---|---|
-| + Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
-+ 최종 9964개의 data로 추림.
-+ Labels 중에서 목적차량을 차량으로 통합(최종 분류 class 개수 3개)
-+ mAP 정확도 향상을 위해 epoch를 class 개수 *20000으로 총 60000번 지정. (최종 학습완료된 epoch는 12000번)
-+ 데이터가 방대하기 때문에 Image argumentation을 적용하지 않음. (똑같은 사진을 회전과 좌우 반전을 부여하여 data 개수 늘림으로써 모델 성능이 정확)
-|a|a|a|
+|Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
+최종 9964개의 data로 추림.
+Labels 중에서 목적차량을 차량으로 통합(최종 분류 class 개수 3개)
+mAP 정확도 향상을 위해 epoch를 class 개수 *20000으로 총 60000번 지정. (최종 학습완료된 epoch는 12000번)
+데이터가 방대하기 때문에 Image argumentation을 적용하지 않음. (똑같은 사진을 회전과 좌우 반전을 부여하여 data 개수 늘림으로써 모델 성능이 정확)|
+|a|a|a|a|
 
 ---
 
