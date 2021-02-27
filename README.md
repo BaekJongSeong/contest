@@ -18,10 +18,36 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
   + 최종 9964개의 data로 추림. (총 분류하려는 class 개수 3개로 조정: 자동차 사람 이륜차)
   + mAP 정확도 향상을 위해 epoch를 class 개수 *20000으로 총 60000번 지정. (최종 학습완료된 epoch는 12000번)
   + 데이터가 방대하기 때문에 Image argumentation을 적용하지 않음. (똑같은 사진을 회전과 좌우 반전을 부여하여 data 개수 늘림으로써 모델 성능이 정확)|
+  + Yolo(You Only Look Once)를 사용하기 위해서 json 파일을 txt 파일로 변환.
+  + 각 bounding box마다의 좌표들을 image size 1920x1080에 대한 0~1 사이의 범위로 scaling 하는 과정 거침
 
-+ 학습데이터셋 생성
++ tensorflow 파일 구성
+  + Config.py
+    + __C.YOLO.CLASSES: class = 3이므로 클래스 이름이 들어있는 파일 위치 지정
+    + __C.TRAIN.ANNOT_PATH & __C.TEST.ANNOT_PATH : image data의 train/valid 데이터 셋 및 names 파일 위치 정보
+    + __C.TRAIN.BATCH_SIZE: 각 epoch 별 batch size 지정
+	  + batch, subdivision크기와 학습 이미지 크기 조정, hyperparameter 조정, learning rate와 epoch, [convolutional neural network] 및 [yolo network]의 filter와 activation 조정, max pooling size 조정
+
+Subdivision = 64 (1 epoch 당 batch size)
+Width & height = 416
+momentum=0.949 (optimazation으로 과거 이동 방식 기억, 가중치 계속 부여)
+channels=3	(1 epoch 당 3개의 channels)
+learning_rate=0.001(학습 속도가 너무 느려도, 빨라도 안됨)
+max_batches = 60000
+CNN activation=mish (relu activation보다 부드럽게 올라가는 gradient)
+SPPnet
+마지막 부분의 CNN activation = linear
+YOLO layer은 이미지의 feature들을 뽑고 난 후에 실질적인 prediction을 하는 layer. 
+Mask: 총 9개의 anchor이 정의되어 있는데, 그 중 mask에 적혀있는 tag에 해당하는 anchor들만 사용.(ex) anchors = 12, 16, 19, 36, 40, 28, 36, 75, 76, 55, 72, 146, 142, 110, 192, 243, 459, 401)
+
+  + Dataset.py
+    + 파일이름에 띄어쓰기가 있는 경우 처리.
+    + Coco annotation으로 되어있으면 이미지 파일 이름 + left top, right bottom 좌표 + class_id가 들어오는데 이때 띄어쓰기를 기준으로 들어옴.
+    + 그래서 dataset 오류 생길 수 있으므로 image 파일 이름 띄어쓰기를 처리
+
 + 학습 및 모델 생성
-+ 생성된 모델을 통한 
+
++ 생성된 모델을 통한 detect.py
 
 ---
 
@@ -30,4 +56,3 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 python save_model.py --weights ./data/yolov4.weights --output ./checkpoints/yolov4-416 --input_size 416 --model yolov4 
 
 ```
-데이터 전처리부터 model train / deteck 과정 전주기 과정은 darknet_yolov4_final_contest.py와 tensorflow_yolov4_final.py를 참고하시기 
