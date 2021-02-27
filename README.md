@@ -13,6 +13,8 @@ Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnu
 # 프로젝트 전체적 개요입니다
 제공받은 데이터(png 10329장 + json 파일 10329개) 이용
 
+데이터 전처리 ==> Config.py 파일 구성 및 hyperparameter수정 ==> 모델 학습 train.py ==> detect.py를 통한 예측
+------
 + 데이터 전처리
   + Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
   + 최종 9964개의 data로 추림. (총 분류하려는 class 개수 3개로 조정: 자동차 사람 이륜차)
@@ -45,6 +47,8 @@ CNN activation=mish (relu activation보다 부드럽게 올라가는 gradient)
 YOLO layer은 이미지의 feature들을 뽑고 난 후에 실질적인 prediction을 하는 layer. 
 
 Mask: 총 9개의 anchor이 정의되어 있는데, 그 중 mask에 적혀있는 tag에 해당하는 anchor들만 사용.(ex) anchors = 12, 16, 19, 36, 40, 28, 36, 75, 76, 55, 72, 146, 142, 110, 192, 243, 459, 401)
+
+
 
 
   + Dataset.py
