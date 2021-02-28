@@ -27,6 +27,7 @@ git clone하기 전에 다운받아야할 파일 + 명령어
 
 # 다운받을 yolov4.weights 파일
 Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
+https://drive.google.com/file/d/1Y5JP2bn2I-Woqwsi-qhSs3WmGtKlwmov/view
 
 #이미 준비된 weights 파일이 있다면 아래 명령어를 통해서 변경
 !python save_model.py --weights /content/drive/My\ Drive/Colab\ Notebooks/darknet/bin/darknet/backup_01/sia_best.weights --output ./mAP/yolov_hack-416 --input_size 416 --model yolov4
