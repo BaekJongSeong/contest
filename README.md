@@ -9,18 +9,35 @@ If the hackathon is divided into 3 part("the idea part, the technology part, and
 
 ------
 # 프로젝트 전체적 개요입니다
-제공받은 데이터(png 10329장 + json 파일 10329개) 이용
 
+자율주행차량을 통해 제공되는 10329장의 image 데이터(공단에서 지정해준 사고다발지역)와 그에 해당하는 10329개의 json파일을 이용
+
+object detection을 진행하기 위한 인공지능 모델 학습 후 test image 데이터들에 대한 모델 정확도를 테스트하는 형식
+
+실습환경
+1. Python 3.6.9 + GPU Tesla V100 + Ram 25.5GB 사양 사용을 위해 colab 사용
+
+git clone하기 전에 다운받아야할 파일
+```bash
+Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
+!python save_model.py --weights /content/drive/My\ Drive/Colab\ Notebooks/darknet/bin/darknet/backup_01/sia_best.weights --output ./mAP/yolov_hack-416 --input_size 416 --model yolov4
+!python train.py --weights ./data/sia_best.weights
+!python detect.py --weights ./mAP/yolov_hack-416 --size 416 --model yolov4 --image /content/ab.png
+
+#파일 여러개 한번에 detect.py 돌릴떄
+def letsgo(file):
+  !python detect.py --weights ./mAP/yolov4-416 --size 416 --model yolov4 --image $file
+
+for file in files:
+  file=path+file
+  letsgo(file)
+```
+------
 ### 1. 데이터 전처리
 ### 2. Config.py 파일 구성 및 hyperparameter수정
 ### 3. 모델 학습 train.py
 ### 4. detect.py를 통한 예측
 ---
-git clone하기 전에 다운받아야할 파일
-```bash
-Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
-```
-------
 + 데이터 전처리
   + Aimmo측에서 제공해준 전체 데이터 중에서 정확한 데이터셋 확보를 위해 10329개의 json 파일 중, 365개의 empty annotation으로 이루어진 json 파일 제거. 
   + 최종 9964개의 data로 추림. (총 분류하려는 class 개수 3개로 조정: 자동차 사람 이륜차)
