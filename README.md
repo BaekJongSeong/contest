@@ -8,7 +8,7 @@ If the hackathon is divided into 3 part("the idea part, the technology part, and
 해커톤을 3부분(아이디어 파트와 기술파트, 사업화파트)로 나누어보면, 이 부분은 기술파트에 해당하는 repository이며 yolov4에 대해서 설명하고 있습니다.
 
 ------
-# 프로젝트 전체적 개요입니다
+# 프로젝트 전체 개요
 
 자율주행차량을 통해 제공되는 10329장의 image 데이터(공단에서 지정해준 사고다발지역)와 그에 해당하는 10329개의 json파일을 이용
 
@@ -17,7 +17,7 @@ object detection을 진행하기 위한 인공지능 모델 학습 후 test imag
 실습환경
 1. Python 3.6.9 + GPU Tesla V100 + Ram 25.5GB 사양 사용을 위해 colab 사용
 
-git clone하기 전에 다운받아야할 파일
+git clone하기 전에 다운받아야할 파일 + 명령어
 ```bash
 Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
 !python save_model.py --weights /content/drive/My\ Drive/Colab\ Notebooks/darknet/bin/darknet/backup_01/sia_best.weights --output ./mAP/yolov_hack-416 --input_size 416 --model yolov4
@@ -43,8 +43,8 @@ for file in files:
   + 최종 9964개의 data로 추림. (총 분류하려는 class 개수 3개로 조정: 자동차 사람 이륜차)
   + mAP 정확도 향상을 위해 epoch를 class 개수 *20000으로 총 60000번 지정. (최종 학습완료된 epoch는 12000번)
   + 데이터가 방대하기 때문에 Image argumentation을 적용하지 않음. (똑같은 사진을 회전과 좌우 반전을 부여하여 data 개수 늘림으로써 모델 성능이 정확)|
-  + Yolo(You Only Look Once)를 사용하기 위해서 json 파일을 txt 파일로 변환.
   + 각 bounding box마다의 좌표들을 image size 1920x1080에 대한 0~1 사이의 범위로 scaling 하는 과정 거침
+  ### + Yolo(You Only Look Once)를 사용하기 위해서 json 파일을 txt 파일로 변환.
 
 + tensorflow 파일 구성
   + Config.py
