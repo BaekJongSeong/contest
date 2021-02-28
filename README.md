@@ -98,9 +98,5 @@ Mask: 총 9개의 anchor이 정의되어 있는데, 그 중 mask에 적혀있는
 python save_model.py --weights ./data/yolov4.weights --output ./checkpoints/yolov4-416 --input_size 416 --model yolov4 
 
 ```
-![2021-02-28](https://user-images.githubusercontent.com/79182947/109408567-40a96800-79ce-11eb-97bb-a8878e8cd3ab.png)
-![image](https://user-images.githubusercontent.com/79182947/109408598-63d41780-79ce-11eb-84b8-33b7d41a5a38.png)
-![image](https://user-images.githubusercontent.com/79182947/109408609-79494180-79ce-11eb-8fa0-a70115938552.png)
-![image](https://user-images.githubusercontent.com/79182947/109408624-92ea8900-79ce-11eb-90b2-3ee1bea971b2.png)
 
 
