@@ -1,4 +1,4 @@
-# tensorflow-yolov4(2021.02.05~2021.02.20)
+# tensorflow-yolov4(2021.01.20~2021.02.20)
 This is a project where I participated in "the online hackathon for Dynamic Objects Detection" hosted by the Ministry of Science_ICT, NIA and hosted by Aimmo.
 
 If the hackathon is divided into 3 part("the idea part, the technology part, and the commercialization part"), this part is a repository corresponding to the technology part and explains tensorflow-yolov4.
