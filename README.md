@@ -19,6 +19,7 @@ object detection을 진행하기 위한 인공지능 모델 학습 후 test imag
 1. Python 3.6.9 + GPU Tesla V100 + Ram 25.5GB 사양 사용을 위해 colab 사용
 
 git clone하기 전에 다운받아야할 파일 + 명령어
+### dataset은 따로 다운받아야함 (github에 용량 제한으로 올릴 )
 ### 경로는 지정 파일 위치로 사용자별로 바꿔야함
 ```bash
 #git clone
