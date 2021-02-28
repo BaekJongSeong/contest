@@ -2,9 +2,9 @@
 
 ---
 글 읽는 순서
-1. 이 repository의 readme 파일
-2. github.io의 해커톤 1 https://baekjongseong.github.io/
-3. github.io의 해커톤 2 https://baekjongseong.github.io/
+1. github.io의 해커톤 1 https://baekjongseong.github.io/
+2. github.io의 해커톤 2 https://baekjongseong.github.io/
+3. 이 repository의 readme 파일
 ---
 
 This is a project where I participated in "the online hackathon for Dynamic Objects Detection" hosted by the Ministry of Science_ICT, NIA and hosted by Aimmo.
