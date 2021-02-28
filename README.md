@@ -19,14 +19,19 @@ object detection을 진행하기 위한 인공지능 모델 학습 후 test imag
 1. Python 3.6.9 + GPU Tesla V100 + Ram 25.5GB 사양 사용을 위해 colab 사용
 
 git clone하기 전에 다운받아야할 파일 + 명령어
-### dataset은 따로 다운받아야함 (github에 용량 제한)
-### 경로는 지정 파일 위치로 사용자별로 바꿔야함
+### + 1.dataset은 따로 다운받아야함 (github에 용량 제한)
+	+ 다운 후 tensorflow-yolov4-tflite/dataset/export안에 놓기
+### + 2.경로는 지정 파일 위치로 사용자별로 바꿔야함
+### + 3.weights파일도 따로 다운받아야 함(github에 용량 제한)
+	+ 다운 후 tensorflow-yolov4-tflite / data에 놓기
+### + 4./mAP 파일 안에 save_model.py를 통해서 변경된 pb 모델이 저장됨 ==> 이용
+
 ```bash
 #git clone
 %cd /content/
 !git clone https://github.com/hunglc007/tensorflow-yolov4-tflite.git
 
-# 다운받을 yolov4.weights 파일
+# 3. 다운받을 yolov4.weights 파일
 Download yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
 https://drive.google.com/file/d/1Y5JP2bn2I-Woqwsi-qhSs3WmGtKlwmov/view
 
