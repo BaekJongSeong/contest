@@ -1,4 +1,12 @@
 # tensorflow-yolov4(2021.01.20~2021.02.20)
+
+---
+글 읽는 순서
+1. 이 repository의 readme 파일
+2. github.io의 해커톤 1 https://baekjongseong.github.io/
+3. github.io의 해커톤 2 https://baekjongseong.github.io/
+---
+
 This is a project where I participated in "the online hackathon for Dynamic Objects Detection" hosted by the Ministry of Science_ICT, NIA and hosted by Aimmo.
 
 If the hackathon is divided into 3 part("the idea part, the technology part, and the commercialization part"), this part is a repository corresponding to the technology part and explains tensorflow-yolov4.
